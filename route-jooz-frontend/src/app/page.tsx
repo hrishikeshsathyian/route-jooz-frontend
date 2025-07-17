@@ -1,6 +1,30 @@
+"use client";
 import Image from "next/image";
+import { useEffect } from "react";
+
 
 export default function Home() {
+useEffect(() => {
+  const pingAPI = async () => {
+    try {
+      const response = await fetch("http://localhost:80/ping");
+      const data = await response.json(); // we need second await because response.json() is a separate async operation that converts the response body to JSON
+      console.log("API Response:", data.data);
+      
+      if (!response.ok) {
+        console.error("Failed to fetch API");
+      } else {
+        console.log("API fetched successfully");
+      }
+    } catch (error) {
+      console.error("Error fetching API:", error);
+    }
+  };
+
+  pingAPI();
+}, []);
+
+
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
