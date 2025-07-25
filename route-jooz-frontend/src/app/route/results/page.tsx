@@ -3,11 +3,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { response } from "@/app/lib/dummyAPIResponse";
-import { MapContainer, TileLayer, Polyline, Marker, Popup } from "react-leaflet";
 import { Truck } from "lucide-react";
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+import dynamic from "next/dynamic";
+
 
 type Point = {
   address: number;
@@ -34,6 +32,8 @@ export default function RouteResultsPage() {
   const [selectedDriver, setSelectedDriver] = useState<number | null>(null);
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const RouteMap = dynamic(() => import("@/app/components/routeMap"), { ssr: false });
+
   
   useEffect(() => {
     const parsed = parseInt(searchParams.get("drivers") || "0", 10);
@@ -172,29 +172,9 @@ export default function RouteResultsPage() {
 
             {/* Map */}
                 <div className="relative md:col-span-5 h-[500px] rounded-xl overflow-hidden shadow-lg">
-                    <MapContainer center={[1.3521, 103.8198]} zoom={11} scrollWheelZoom className="h-full w-full">
-                    <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
-                    />
-
-                    {(selectedDriver !== null ? [selectedDriver] : routes.map((_, i) => i)).map((driverIdx) => (
-                        <Polyline
-                        key={driverIdx}
-                        positions={routes[driverIdx].map(p => [p.lat, p.lng])}
-                        color={colors[driverIdx % colors.length]}
-                        />
-                    ))}
-
-                    {(selectedDriver !== null ? routes[selectedDriver] : routes.flat()).map((point, i) => (
-                        <Marker key={i} position={[point.lat, point.lng]}>
-                        <Popup>
-                            <strong>{point.name}</strong><br />
-                            {point.address}
-                        </Popup>
-                        </Marker>
-                    ))}
-                    </MapContainer>
+                    <div className="relative md:col-span-5 h-[500px] rounded-xl overflow-hidden shadow-lg">
+                    <RouteMap routes={routes} selectedDriver={selectedDriver} colors={colors} />
+                    </div>
                 </div>
             </div>
 

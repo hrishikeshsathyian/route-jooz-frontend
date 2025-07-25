@@ -60,7 +60,7 @@ export default function Home() {
           </h5>
          
           <p className="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">
-            Advanced algorithms calculate the most efficient routes for your deliveries, considering traffic patterns and delivery windows.
+            Advanced algorithms calculate the most efficient routes for your drivers, considering real-time traffic information.
           </p>
           
       </div>
@@ -74,7 +74,7 @@ export default function Home() {
           </h5>
          
           <p className="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">
-           Distribute deliveries across multiple drivers efficiently, balancing workload and minimizing total travel distance.
+           Distribute deliveries across multiple drivers efficiently, balancing workload and minimizing total travel time.
           </p>
           
       </div>

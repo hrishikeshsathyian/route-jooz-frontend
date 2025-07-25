@@ -75,6 +75,24 @@ export default function RouteOptimizationPage() {
             Supported formats: CSV, Excel (.xlsx), JSON.
           </p>
             </div>
+            <div className="mt-6 bg-orange-100 border-l-4 border-orange-400 p-4 rounded-md text-sm text-gray-700">
+              <p className="font-semibold text-orange-700 mb-1">ℹ️ Note on File Upload</p>
+              <p className="mb-2">
+                File upload is currently disabled. For current demo purposes, a delivery point dataset provided by <span className="font-medium text-orange-800">iJooz</span> is being used.
+              </p>
+              <p className="mb-2">
+                Support for user-uploaded files will be enabled in a future update.
+              </p>
+              <p>
+                When enabled, the expected CSV format should include the following columns:
+                <ul className="list-disc list-inside mt-1 text-gray-600">
+                  <li><code>id</code> – unique identifier</li>
+                  <li><code>postal_code</code> – valid Singapore 6-digit postal code</li>
+                  <li><code>location_name</code> – descriptive name of the vending machine or stop</li>
+                </ul>
+              </p>
+            </div>
+
           <div className="flex justify-center">
             <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md w-full md:w-auto" onClick={handleGenerate}>
               🚚 Generate Optimized Routes
