@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { response } from "@/app/lib/dummyAPIResponse";
 import { Truck } from "lucide-react";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
 
 type Point = {
@@ -25,14 +25,16 @@ type ApiResponse = {
   data: ApiData;
 };
 
+export const dynamic = "force-dynamic";
 
 export default function RouteResultsPage() {
+    
   const searchParams = useSearchParams();
   const [numDrivers, setNumDrivers] = useState<number | null>(null);
   const [selectedDriver, setSelectedDriver] = useState<number | null>(null);
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const RouteMap = dynamic(() => import("@/app/components/routeMap"), { ssr: false });
+  const RouteMap = dynamicImport(() => import("@/app/components/routeMap"), { ssr: false });
 
   
   useEffect(() => {
