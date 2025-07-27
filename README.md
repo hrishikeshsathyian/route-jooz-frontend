@@ -20,7 +20,6 @@ This repo serves as the **frontend** for the [IJooz Route Optimisation Platform]
       <li><a href="#installation-and-running">Installation and Running</a></li>
     </ul>
   </li>
-  <li><a href="#project-structure">Project Structure</a></li>
   <li><a href="#contact-and-links">Contact and Links</a></li>
   <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ol>
@@ -82,22 +81,6 @@ The frontend is a **Next.js App Router** application powered by **Tailwind CSS**
 
 ---
 
-## Project Structure
-
-```
-route-jooz-frontend/
-├── app/
-│   └── route/                # Main route input page
-│   └── route/results/        # Route results page with map visualization
-├── components/               # Reusable React components (e.g., MapViewer)
-├── public/                   # Static assets like the background blobs
-├── styles/                   # Tailwind & global CSS
-├── utils/                    # CSV parsing, API helpers, etc.
-├── .env.local.example        # Sample environment variables
-└── README.md
-```
-
----
 
 ## Contact and Links
 
@@ -111,8 +94,6 @@ Backend Repository – [https://github.com/hrishikeshsathyian/routejooz-api](htt
 
 ## Acknowledgments
 
-Thanks to [Lee Sutton](https://github.com/2403338leesutton) for project guidance and feedback.
-
-UI designed with inspiration from modern route planners and Google Maps UX.
+This project was introduced to me and developed with contributions from [Lee Sutton](https://github.com/2403338leesutton)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

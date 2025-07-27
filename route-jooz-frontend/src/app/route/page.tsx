@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function RouteOptimizationPage() {
-  const [numDrivers, setNumDrivers] = useState(1);
+  const [numDrivers, setNumDrivers] = useState(3);
   const router = useRouter();
 
   const handleGenerate = () => {

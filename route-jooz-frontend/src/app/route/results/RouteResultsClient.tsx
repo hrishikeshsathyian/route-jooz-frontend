@@ -86,10 +86,8 @@ export default function RouteResultsClient() {
 
 
   return (
-
-    <div className="min-h-screen bg-white  py-16 px-4 sm:px-10 md:px-20 relative">
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-orange-100 opacity-50 rounded-full blur-[120px] z-0" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-00 opacity-40 rounded-full blur-[160px] z-0" />
+    
+    <div className="min-h-screen bg-white  py-16 px-4 sm:px-10 md:px-20 relative">        
       <div className="z-10 max-w-7xl mx-auto">
             <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-2 font-bebas-neue">
             iJooz Route Results
