@@ -46,7 +46,7 @@ export default function RouteOptimizationPage() {
               min="1"
               max="10"
               onChange={(e) => setNumDrivers(Number(e.target.value))}
-              defaultValue={1}
+              defaultValue={3}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:ring-orange-500 focus:border-orange-500 text-orange-700"
             />
             <p className="mt-1 text-sm text-gray-500">
@@ -80,6 +80,17 @@ export default function RouteOptimizationPage() {
               <p className="mb-2">
                 File upload is currently disabled. For current demo purposes, a delivery point dataset provided by <span className="font-medium text-orange-800">iJooz</span> is being used.
               </p>
+              
+              <a
+                href="/dummy_data.csv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-600 underline font-medium hover:text-orange-800"
+              >
+                📄 View Demo Dataset File
+              </a>
+            
+
               <p className="mb-2">
                 Support for user-uploaded files will be enabled in a future update.
               </p>
